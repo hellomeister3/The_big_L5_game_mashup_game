@@ -1,4 +1,4 @@
-# The big L5 game mashup game
+# The Big L5 Game Mashup Game
 ## The one and only game needed for L5!
 
 Welcome to the big L5 game mashup game. This is a program that includes all the games frequently played in L5. 
