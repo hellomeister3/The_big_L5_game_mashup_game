@@ -90,6 +90,528 @@ V_/_'
 
     print('oh sorry, i meant a blinking penguin')
 
+def tic_tac_toe():
+    print(''); time.sleep(0.3)
+    board = []
+    players_turn = True
+    AI_playing = False
+    endgame = False
+    player1Turn = 1
+    AI_turn = 1
+
+    for x in range(0, 3):
+        board.append(["■"] * 3)
+    print(''); time.sleep(0.3)
+    # creates the board as a list
+
+    def print_board(board):
+        for row in board:
+            print(' '.join(row))
+    print(''); time.sleep(0.3)
+    # creates a function for printing the board
+
+    print_board(board)
+    # prints the board
+
+    print('welcome to the Tic Tac Toe game'); print(''); time.sleep(0.3)
+    counter1 = str(input('player 1 would you like to be X or O?')); print(''); time.sleep(0.3)
+    if counter1 == 'X':
+        AI_counter = 'O'
+    elif counter1 == 'O':
+        AI_counter = 'X'
+    elif counter1 == 'o':
+        counter1 = 'O'
+        AI_counter = 'X'
+    elif counter1 == 'x':
+        counter1 = 'X'
+        AI_counter = 'O'
+    else:
+        print('that is not a valid character. player 1 is X, player 2 is O'); print(''); time.sleep(0.3)
+        counter1 = 'X'
+        AI_counter = 'O'
+    # players choose their counters
+
+    print('player 1 is', counter1, ',the AI is', AI_counter); print(''); time.sleep(0.3)
+    # players told what their counters are
+
+    def winner_check(what_player):
+        if board[0][0] == board[0][1] == board[0][2] == what_player or \
+                board[1][0] == board[1][1] == board[1][2] == what_player or \
+                board[2][0] == board[2][1] == board[2][2] == what_player or \
+                board[0][0] == board[1][1] == board[2][2] == what_player or \
+                board[0][2] == board[1][1] == board[2][0] == what_player or \
+                board[0][0] == board[1][0] == board[2][0] == what_player or \
+                board[0][1] == board[1][1] == board[2][1] == what_player or \
+                board[0][2] == board[1][2] == board[2][2] == what_player:
+            return True
+        return False
+    # see if there are three in a row (\ enables multiple lines in code)
+
+    def tie_check():
+        if board[0][0] != '■' and \
+                board[0][1] != '■' and \
+                board[0][2] != '■' and \
+                board[1][0] != '■' and \
+                board[1][1] != '■' and \
+                board[1][2] != '■' and \
+                board[2][0] != '■' and \
+                board[2][1] != '■' and \
+                board[2][2] != '■':
+            return True
+        return False
+    # checks for if it is a tie
+
+    def total_checking():
+
+        winner_check(what_player)
+        tie_check()
+        # runs functions for winning conditions
+
+    def check_outcomes():
+        if tie_check():
+            print('its a draw!'); print(''); time.sleep(0.3)
+            endgame = True
+            players_turn = False
+            AI_playing = False
+
+        elif winner_check(what_player) == True:
+            print('unlucky, the AI won!'); print(''); time.sleep(0.3)
+            endgame = True
+            players_turn = False
+            AI_playing = False
+        # code for if player 1 has won
+
+
+    # stops the game if it is a tie or a win
+
+    while endgame == False:
+
+        if players_turn == True:
+            print(" player 1 turn", player1Turn); print(''); time.sleep(0.3)
+            player1Turn += 1
+            row = int(input("Row: ")) - 1
+            col = int(input("Column: ")) - 1
+            print(''); time.sleep(0.3)
+            # player chooses the position for their counter
+
+            if board[row][col] == '■':
+                board[row][col] = counter1
+                print_board(board) #prints the updated board
+                print(''); time.sleep(0.3)
+                what_player = counter1
+            elif IndexError:
+                print('this square has already been used, as a penalty your turn is forfeit'); print(''); time.sleep(0.3)#checks for an error
+            else:
+                print('this square has already been used, as a penalty your turn is forfeit'); print(''); time.sleep(0.3)
+            # checks to see if the player has tried to overwrite another counter
+
+
+            winner_check(what_player)
+            tie_check()
+            # runs functions for winning conditions
+
+
+            if tie_check():
+                print('its a draw!'); print(''); time.sleep(0.3)
+                endgame = True
+                players_turn = False
+                AI_playing = False
+
+            elif winner_check(what_player) is True:
+                print('player 1 wins!'); print(''); time.sleep(0.3)
+                endgame = True
+                players_turn = False
+                AI_playing = False
+            # code for if player 1 has won
+
+            else:
+                pass
+                # stops the game if it is a tie or a win
+
+            if endgame == False:
+                players_turn = False
+                AI_playing = True
+
+        elif AI_playing == True:
+            print('AI turn', AI_turn); print(''); time.sleep(0.3)
+            AI_turn += 1
+
+            if (board[0][0] == counter1 or
+                    board[0][2] == counter1 or
+                    board[2][0] == counter1 or
+                    board[2][2] == counter1) and \
+                    board[1][1] == '■':
+                board[1][1] = AI_counter
+                print_board(board); print(''); time.sleep(0.3)
+                total_checking()
+                check_outcomes()
+                if endgame == False:
+                    players_turn = True
+                    AI_playing = False
+            # tells the AI to play in the middle square if its opponent has gone in the corners.
+
+            elif (board[0][1] == counter1 or
+                    board[1][2] == counter1 or
+                    board[2][1] == counter1 or
+                    board[1][0] == counter1) and \
+                    board[1][1] == '■':
+                board[1][1] = AI_counter
+                print_board(board); print(''); time.sleep(0.3)
+                total_checking()
+                check_outcomes()
+                if endgame == False:
+                    players_turn = True
+                    AI_playing = False
+            # tells the AI to play in the middle if its opponent has gone in one of the sides.
+
+            elif board[1][1] == counter1 and \
+                    board[0][0] == '■':
+                board[0][0] = AI_counter
+                print_board(board); print(''); time.sleep(0.3)
+                total_checking()
+                check_outcomes()
+                if endgame == False:
+                    players_turn = True
+                    AI_playing = False
+            # tells the AI to play in the top corner if its opponent has played in the middle.
+
+            elif board[1][1] == counter1 and \
+                    board[2][2] == '■' or \
+                    board[0][0] == counter1 and \
+                    board[2][0] == counter1 and \
+                    board[2][1] == counter1 and \
+                    board[2][2] == '■':
+                board[2][2] = AI_counter
+                print_board(board); print(''); time.sleep(0.3)
+                total_checking()
+                check_outcomes()
+                if endgame == False:
+                    players_turn = True
+                    AI_playing = False
+            # counters the opponent if they have 2 in a row
+
+            elif board[2][0] == counter1 and \
+                    board[1][1] == counter1 and \
+                    board[0][2] == '■' or \
+                    board[0][0] == counter1 and \
+                    board[0][1] == counter1 and \
+                    board[0][2] == '■':
+                board[0][2] = AI_counter
+                print_board(board); print(''); time.sleep(0.3)
+                total_checking()
+                check_outcomes()
+                if endgame == False:
+                    players_turn = True
+                    AI_playing = False
+            # counters the opponent if they have 2 in a row
+
+            elif board[0][2] == counter1 and \
+                    board[0][1] == counter1 and \
+                    board[0][0] == '■' or \
+                    board[1][0] == counter1 and \
+                    board[2][0] == counter1 and \
+                    board[0][0] == '■':
+                board[0][0] = AI_counter
+                print_board(board); print(''); time.sleep(0.3)
+                total_checking()
+                check_outcomes()
+                if endgame == False:
+                    players_turn = True
+                    AI_playing = False
+            # counters the opponent if they have 2 in a row
+
+            elif board[1][0] == counter1 and \
+                    board[0][0] == counter1 and \
+                    board[2][0] == '■' or \
+                    board[2][1] == counter1 and \
+                    board[2][2] == counter1 and \
+                    board[2][0] == '■':
+                board[2][0] = AI_counter
+                print_board(board); print(''); time.sleep(0.3)
+                total_checking()
+                check_outcomes()
+                if endgame == False:
+                    players_turn = True
+                    AI_playing = False
+            # counters the opponent if they have 2 in a row
+
+            elif board[2][1] == counter1 and \
+                    board[1][1] == counter1 and \
+                    board[0][1] == '■' or \
+                    board[0][0] == counter1 and \
+                    board[0][2] == counter1 and \
+                    board[0][1] == '■':
+                board[0][1] = AI_counter
+                print_board(board); print(''); time.sleep(0.3)
+                total_checking()
+                check_outcomes()
+                if endgame == False:
+                    players_turn = True
+                    AI_playing = False
+            # counters the opponent if they have 2 in a row
+
+            elif board[1][0] == counter1 and \
+                    board[1][1] == counter1 and \
+                    board[1][2] == '■' or \
+                    board[0][2] == counter1 and \
+                    board[2][2] == counter1 and \
+                    board[1][2] == '■':
+                board[1][2] = AI_counter
+                print_board(board); print(''); time.sleep(0.3)
+                total_checking()
+                check_outcomes()
+                if endgame == False:
+                    players_turn = True
+                    AI_playing = False
+            # counters the opponent if they have 2 in a row
+
+            elif board[0][1] == counter1 and \
+                    board[1][1] == counter1 and \
+                    board[2][1] == '■' or \
+                    board[2][2] == counter1 and \
+                    board[2][0] == counter1 and \
+                    board[2][2] == '■':
+                board[2][1] = AI_counter
+                print_board(board); print(''); time.sleep(0.3)
+                total_checking()
+                check_outcomes()
+                if endgame == False:
+                    players_turn = True
+                    AI_playing = False
+            # counters the opponent if they have 2 in a row
+
+            elif board[1][2] == counter1 and \
+                    board[1][1] == counter1 and \
+                    board[1][0] == '■' or \
+                    board[0][0] == counter1 and \
+                    board[2][0] == counter1 and \
+                    board[1][0] == '■':
+                board[1][0] = AI_counter
+                print_board(board); print(''); time.sleep(0.3)
+                total_checking()
+                check_outcomes()
+                if endgame == False:
+                    players_turn = True
+                    AI_playing = False
+            # counters the opponent if they have 2 in a row
+
+            elif board[0][0] == counter1 and \
+                    board[2][2] == counter1 and \
+                    board[1][1] == '■' or \
+                    board[2][0] == counter1 and \
+                    board[0][2] == counter1 and \
+                    board[1][1] == '■' or \
+                    board[0][1] == counter1 and \
+                    board[2][1] == counter1 and \
+                    board[1][1] == '■' or \
+                    board[1][0] == counter1 and \
+                    board[1][2] == counter1 and \
+                    board[1][1] == '■':
+                board[1][1] = AI_counter
+                print_board(board); print(''); time.sleep(0.3)
+                total_checking()
+                check_outcomes()
+                if endgame == False:
+                    players_turn = True
+                    AI_playing = False
+            # counters the opponent if they have 2 around the centre.
+
+            elif board[1][1] == AI_counter and \
+                     board[0][0] == AI_counter and \
+                     board[2][2] == '■' or \
+                     board[2][0] == AI_counter and \
+                     board[2][1] == AI_counter and \
+                     board[2][2] == '■':
+                board[2][2] = AI_counter
+                print_board(board); print(''); time.sleep(0.3)
+                total_checking()
+                check_outcomes()
+                if endgame == False:
+                    players_turn = True
+                    AI_playing = False
+                # Tells AI to play the third in arrow if the player has not countered it
+
+            elif board[2][0] == AI_counter and \
+                     board[1][1] == AI_counter and \
+                     board[0][2] == '■' or \
+                     board[0][0] == AI_counter and \
+                     board[0][1] == AI_counter and \
+                     board[0][2] == '■':
+                board[0][2] = AI_counter
+                print_board(board); print(''); time.sleep(0.3)
+                total_checking()
+                check_outcomes()
+                if endgame == False:
+                    players_turn = True
+                    AI_playing = False
+                # Tells AI to play the third in arrow if the player has not countered it
+
+            elif board[0][2] == AI_counter and \
+                     board[0][1] == AI_counter and \
+                     board[0][0] == '■' or \
+                     board[1][0] == AI_counter and \
+                     board[2][0] == AI_counter and \
+                     board[0][0] == '■':
+                board[0][0] = AI_counter
+                print_board(board); print(''); time.sleep(0.3)
+                total_checking()
+                check_outcomes()
+                if endgame == False:
+                    players_turn = True
+                    AI_playing = False
+                # Tells AI to play the third in arrow if the player has not countered it
+
+            elif board[1][0] == AI_counter and \
+                     board[0][0] == AI_counter and \
+                     board[2][0] == '■' or \
+                     board[2][1] == AI_counter and \
+                     board[2][2] == AI_counter and \
+                     board[2][0] == '■':
+                board[2][0] = AI_counter
+                print_board(board); print(''); time.sleep(0.3)
+                total_checking()
+                check_outcomes()
+                if endgame == False:
+                    players_turn = True
+                    AI_playing = False
+                # Tells AI to play the third in arrow if the player has not countered it
+
+            elif board[2][1] == AI_counter and \
+                     board[1][1] == AI_counter and \
+                     board[0][1] == '■' or \
+                     board[0][0] == AI_counter and \
+                     board[0][2] == AI_counter and \
+                     board[0][1] == '■':
+                board[0][1] = AI_counter
+                print_board(board); print(''); time.sleep(0.3)
+                total_checking()
+                check_outcomes()
+                if endgame == False:
+                    players_turn = True
+                    AI_playing = False
+                # Tells AI to play the third in arrow if the player has not countered it
+
+            elif board[1][0] == AI_counter and \
+                     board[1][1] == AI_counter and \
+                     board[1][2] == '■' or \
+                     board[0][2] == AI_counter and \
+                     board[2][2] == AI_counter and \
+                     board[1][2] == '■':
+                board[1][2] = AI_counter
+                print_board(board); print(''); time.sleep(0.3)
+                total_checking()
+                check_outcomes()
+                if endgame == False:
+                    players_turn = True
+                    AI_playing = False
+                # Tells AI to play the third in arrow if the player has not countered it
+
+            elif board[0][1] == AI_counter and \
+                     board[1][1] == AI_counter and \
+                     board[2][1] == '■' or \
+                     board[2][2] == AI_counter and \
+                     board[2][0] == AI_counter and \
+                     board[2][2] == '■':
+                board[2][1] = AI_counter
+                print_board(board); print(''); time.sleep(0.3)
+                total_checking()
+                check_outcomes()
+                if endgame == False:
+                    players_turn = True
+                    AI_playing = False
+                # counters the opponent if they have 2 in a row
+
+            elif board[1][2] == AI_counter and \
+                     board[1][1] == AI_counter and \
+                     board[1][0] == '■' or \
+                     board[0][0] == AI_counter and \
+                     board[2][0] == AI_counter and \
+                     board[1][0] == '■':
+                board[1][0] = AI_counter
+                print_board(board); print(''); time.sleep(0.3)
+                total_checking()
+                check_outcomes()
+                if endgame == False:
+                    players_turn = True
+                    AI_playing = False
+                # Tells AI to play the third in arrow if the player has not countered it
+
+            elif board[0][0] == AI_counter and \
+                     board[2][2] == AI_counter and \
+                     board[1][1] == '■' or \
+                     board[2][0] == AI_counter and \
+                     board[0][2] == AI_counter and \
+                     board[1][1] == '■' or \
+                     board[0][1] == AI_counter and \
+                     board[2][1] == AI_counter and \
+                     board[1][1] == '■' or \
+                     board[1][0] == AI_counter and \
+                     board[1][2] == AI_counter and \
+                     board[1][1] == '■':
+                board[1][1] = AI_counter
+                print_board(board); print(''); time.sleep(0.3)
+                total_checking()
+                check_outcomes()
+                if endgame == False:
+                    players_turn = True
+                    AI_playing = False
+                # Tells AI to play the third in arrow if the player has not countered it
+
+            else:
+                if board[0][0] == '■':
+                    board[0][0] = AI_counter
+                    print_board(board); print(''); time.sleep(0.3)
+                    players_turn = True
+                    AI_playing = False
+
+                elif board[0][1] == '■':
+                    board[0][1] = AI_counter
+                    print_board(board); print(''); time.sleep(0.3)
+                    players_turn = True
+                    AI_playing = False
+
+                elif board[0][2] == '■':
+                    board[0][2] = AI_counter
+                    print_board(board); print(''); time.sleep(0.3)
+                    players_turn = True
+                    AI_playing = False
+
+                elif board[1][0] == '■':
+                    board[1][0] = AI_counter
+                    print_board(board); print(''); time.sleep(0.3)
+                    players_turn = True
+                    AI_playing = False
+
+                elif board[1][1] == '■':
+                    board[1][1] = AI_counter
+                    players_turn = True
+                    AI_playing = False
+
+                elif board[1][2] == '■':
+                    board[1][2] = AI_counter
+                    print_board(board); print(''); time.sleep(0.3)
+                    players_turn = True
+                    AI_playing = False
+
+                elif board[2][0] == '■':
+                    board[2][0] = AI_counter
+                    print_board(board); print(''); time.sleep(0.3)
+                    players_turn = True
+                    AI_playing = False
+
+                elif board[2][1] == '■':
+                    board[2][1] = AI_counter
+                    print_board(board); print(''); time.sleep(0.3)
+                    players_turn = True
+                    AI_playing = False
+
+                elif board[2][2] == '■':
+                    board[2][2] = AI_counter
+                    print_board(board); print(''); time.sleep(0.3)
+                    players_turn = True
+                    AI_playing = False
+
+
 
 # function to display exit message
 def exit_program():
@@ -124,6 +646,7 @@ def user_interface():
 --- google halloween: boo!                    ---
 --- pengiun dance: pengu                      ---
 --- just sitting in the void: .               ---
+--- tic tac toe: xox                          ---
 --- random game: idk                          ---
 --- exit program: bye                         ---
 ---                                           ---
@@ -180,6 +703,10 @@ def user_interface():
                 print('in the void'); time.sleep(1)
                 print('forever'); time.sleep(1)
                 void_sitting()
+
+            elif game_select == 'xox' or game == 8:
+                print('tic tac toe!');
+                tic_tac_toe()
 
             # exit program
             elif game_select == 'bye':
