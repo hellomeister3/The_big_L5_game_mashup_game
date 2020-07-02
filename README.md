@@ -1,7 +1,7 @@
-# The Big L5 Game Mashup Game
+# The Big Game Mashup Game
 ## The one and only game needed for L5!
 
-Welcome to the big L5 game mashup game. This is a program that includes all the games frequently played in L5. 
+Welcome to the big game mashup game. This is a program that includes all the games you'll need. 
 
 ## How to use
 
@@ -19,4 +19,4 @@ To leave the program, just type `bye` in the game selection field.
 
 ## Bugs & Ideas
 
-If you find any bugs, or have any ideas, @ me in the `games for L5` channel
+If you find any bugs, or have any ideas, @ me in the `games` channel

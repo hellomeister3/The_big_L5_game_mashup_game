@@ -60,20 +60,20 @@ def blinking_penguin():
         print('''
     
 
-    '''); time.sleep(0.7)
+    ''')
         print('''
 (o_
 //\\
-V_/_'''); time.sleep(0.7)
+V_/_'''); time.sleep(1)
         print('''
     
     
-    '''); time.sleep(0.7)
+    ''')
         print('''
 (-_
 //\\
 V_/_   
-    '''); time.sleep(0.7)
+    '''); time.sleep(1)
 
     print('oh sorry, i meant a blinking penguin'); time.sleep(0.7)
 
@@ -665,9 +665,15 @@ def user_interface():
             
             # random game selection
             if game_select == 'idk':
+                print('random game!'); time.sleep(0.5); print('')
+                print('processing...'); time.sleep(0.5)
                 for i in range(500):
-                    game = randint(1,9); print(game); time.sleep(0.01)
-
+                    game = randint(1,999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999999)
+                    print(game); time.sleep(0.01)
+                game = randint(1,9); time.sleep(0.5)
+                print('your game is...'); time.sleep(1)
+                print(''); time.sleep(0.4)
+            
             # diep.io
             if game_select == 'pew' or game == 1:
                 print('diep.io!'); webbrowser.open("https://diep.io/")
