@@ -7,4 +7,5 @@
  - Fixed bug where some games don't work
 
 ## V0.3
- - add tic tac toe game
+ - added tic tac toe game
+ - added code comments
