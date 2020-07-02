@@ -56,7 +56,7 @@ def void_sitting():
 # function for game: blinking penguin
 def blinking_penguin():
 
-    for i in range(20):
+    for i in range(6):
         print('''
     
 
@@ -72,10 +72,10 @@ V_/_'''); time.sleep(0.7)
         print('''
 (-_
 //\\
-V_/_'   
+V_/_   
     '''); time.sleep(0.7)
 
-    print('oh sorry, i meant a blinking penguin')
+    print('oh sorry, i meant a blinking penguin'); time.sleep(0.7)
 
 
 
