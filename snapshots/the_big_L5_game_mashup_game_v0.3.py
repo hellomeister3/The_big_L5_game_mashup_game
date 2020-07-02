@@ -1,4 +1,4 @@
-# the big L5 mashup game
+# the big L5 game mashup game
 
 # importing modules
 import time

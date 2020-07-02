@@ -5,3 +5,5 @@
 
 ## V0.2.1
  - Fixed bug where some games don't work
+
+## V0.3
