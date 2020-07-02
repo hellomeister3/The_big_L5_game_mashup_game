@@ -10,3 +10,7 @@ For the program to work, you will need the latest version of python, which can b
 When you run the program, you'll be able to pick a game from the games list, that game will either be opened in your browser, or will run as part of the program. 
 
 To leave the program, just type `bye` in the game selection field.
+
+## Bugs & Ideas
+
+If you find any bugs, or have any ideas, @ me in the games channel
