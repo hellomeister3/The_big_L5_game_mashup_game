@@ -1,5 +1,5 @@
 # The Big Game Mashup Game
-## The one and only game needed for L5!
+## The one and only game you need!
 
 Welcome to the big game mashup game. This is a program that includes all the games you'll need. 
 
