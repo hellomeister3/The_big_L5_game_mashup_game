@@ -13,4 +13,4 @@ To leave the program, just type `bye` in the game selection field.
 
 ## Bugs & Ideas
 
-If you find any bugs, or have any ideas, @ me in the games channel
+If you find any bugs, or have any ideas, @ me in the `games for L5` channel
