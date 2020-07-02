@@ -605,7 +605,48 @@ def tic_tac_toe():
 # function for text based apocalypse game
 def apocalypse():
     print(''); time.sleep(1)
-
+    print(''); time.sleep(1)
+    print('it was a dark and stormy night...'); print(''); time.sleep(2)
+    print('...the waves crashed against the rocks...'); print(''); time.sleep(2)
+    print('...we had no notice...'); print(''); time.sleep(2)
+    print('...apart from the signs we all chose to ignore...'); print(''); time.sleep(2)
+    print('...the storms...'); print(''); time.sleep(2)
+    print('...the fires...'); print(''); time.sleep(2)
+    print('...'); print(''); time.sleep(2)
+    print('...'); print(''); time.sleep(2)
+    print('...the virus...'); print(''); time.sleep(2)
+    print('...'); print(''); time.sleep(2)
+    print('...noone knew what was happening...'); print(''); time.sleep(2)
+    print('...untill it was too late...'); print(''); time.sleep(2)
+    for i in range(30):
+        print('...'); time.sleep(0.5); print('')
+    print('WELCOME TO:'); time.sleep(0.5)
+    print('''
+                               ________________
+                          ____/ (  (    )   )  \___
+                         /( (  (  )   _    ))  )   )\\
+                       ((     (   )(    )  )   (   )  )
+                     ((/  ( _(   )   (   _) ) (  () )  )
+                    ( (  ( (_)   ((    (   )  .((_ ) .  )_
+                   ( (  )    (      (  )    )   ) . ) (   )
+                  (  (   (  (   ) (  _  ( _) ).  ) . ) ) ( )
+                  ( (  (   ) (  )   (  ))     ) _)(   )  )  )
+                 ( (  ( \ ) (    (_  ( ) ( )  )   ) )  )) ( )
+                  (  (   (  (   (_ ( ) ( _    )  ) (  )  )   )
+                 ( (  ( (  (  )     (_  )  ) )  _)   ) _( ( )
+                  ((  (   )(    (     _    )   _) _(_ (  (_ )
+                   (_((__(_(__(( ( ( |  ) ) ) )_))__))_)___)
+                   ((__)        \\\\||lll|l||///          \_))
+                            (   /(/ (  )  ) )\   )
+                          (    ( ( ( | | ) ) )\   )
+                           (   /(| / ( )) ) ) )) )
+                         (     ( ((((_(|)_)))))     )
+                          (      ||\(|(|)|/||     )
+                        (        |(||(||)||||        )
+                          (     //|/l|||)|\\\\ \     )
+                        (/ / //  /|//||||\\\\  \ \  \ _)
+--------------------------APOCALYPSE: WORLD GO BOOM--------------------------
+    ''')
 
 
 # function to display exit message
@@ -630,7 +671,7 @@ def user_interface():
         print(''); time.sleep(0.5)
         print('''
 -------------------------------------------------
---- welcome to the big L5 game mashup game!   ---
+--- welcome to the big game mashup game!      ---
 ---                                           ---
 --- games list:                               ---
 ---                                           ---
@@ -647,7 +688,7 @@ def user_interface():
 --- exit program: bye                         ---
 ---                                           ---
 --- new games/ improvements welcome, just     ---
---- @ harry in games for L5                   ---
+--- @ me in the games channel                 ---
 -------------------------------------------------          
  ''')
         # asking user to select game
