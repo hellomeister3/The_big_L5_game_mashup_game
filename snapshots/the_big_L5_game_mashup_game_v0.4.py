@@ -7,50 +7,37 @@ from random import randint
 
 # function to display game introduction:
 def intoduction():
-    print('silence...'); time.sleep(1)
+    for i in range(100):
+        print('               ---                 '); time.sleep(0.02)
+    print('--- a Hi_2014 studios production ---'); time.sleep(1)
 
-    for i in range(10): 
-        print(''); time.sleep(0.5)
-
-    print('but then...'); time.sleep(1)
-
-    for i in range(10): 
-        print(''); time.sleep(0.5)
-
-    print('penguins!'); time.sleep(1)
     print('''
-  #######
-###########
-############
-####  & ####_
-########### __\\
- ##########_ /
-  ########
- ##########
- ######### (
-;#####)###  |
-#####/###    \\
-####/###      |
-###/####       \\
-##/#####         |
-#/######          |
-/ #######         |   
-  ########        |
-  #########      |
-  ##########    /
- /###########  /
-/##/ ######  '
-##    | ||= C
-#     | ___ C
-    ''')
-    print('')
+ .              +   .                .   . .     .  .
+                   .                    .       .     *
+  .       *                        . . . .  .   .  + .
+            "You Are Here"            .   .  +  . . .
+.                 |             .  .   .    .    . .
+                  |           .     .     . +.    +  .
+                 \|/            .       .   . .
+        . .       V          .    * . . .  .  +   .
+           +      .           .   .      +
+                            .       . +  .+. .
+  .                      .     . + .  . .     .      .
+           .      .    .     . .   . . .        ! /
+      *             .    . .  +    .  .       - O -
+          .     .    .  +   . .  *  .       . / |
+               . + .  .  .  .. +  .
+.      .  .  .  *   .  *  . +..  .            *
+ .      .   . .   .   .   . .  +   .    .            +
+
+    '''); time.sleep(1)
 
 
 # function for game: sitting in the void
 def void_sitting():
     void_timer = 0
 
-# keeps track of the time game has been running for (seconds)
+    # keeps track of the time game has been running for (seconds)
     while True:
         print(''); time.sleep(1)
         void_timer += 1
@@ -90,6 +77,9 @@ V_/_'
 
     print('oh sorry, i meant a blinking penguin')
 
+
+
+# function for tic tac toe game
 def tic_tac_toe():
     print(''); time.sleep(0.3)
     board = []
@@ -612,6 +602,11 @@ def tic_tac_toe():
                     AI_playing = False
 
 
+# function for text based apocalypse game
+def apocalypse():
+    print(''); time.sleep(1)
+
+
 
 # function to display exit message
 def exit_program():
@@ -647,6 +642,7 @@ def user_interface():
 --- pengiun dance: pengu                      ---
 --- just sitting in the void: .               ---
 --- tic tac toe: xox                          ---
+--- apocalypse game: world go boom            ---
 --- random game: idk                          ---
 --- exit program: bye                         ---
 ---                                           ---
@@ -670,7 +666,7 @@ def user_interface():
             # random game selection
             if game_select == 'idk':
                 for i in range(500):
-                    game = randint(1,7); print(game); time.sleep(0.01)
+                    game = randint(1,9); print(game); time.sleep(0.01)
 
             # diep.io
             if game_select == 'pew' or game == 1:
@@ -704,9 +700,15 @@ def user_interface():
                 print('forever'); time.sleep(1)
                 void_sitting()
 
+            # tic tac toe
             elif game_select == 'xox' or game == 8:
                 print('tic tac toe!');
                 tic_tac_toe()
+
+            # apocalypse
+            elif game_select == 'world go boom' or game == 9:
+                print('Apocalypse: world go boom!')        
+                apocalypse()    
 
             # exit program
             elif game_select == 'bye':
