@@ -943,7 +943,8 @@ def apocalypse():
                         print('as you lay there, injured, by the side of the moat, you notice a flash in the distance'); print(''); time.sleep(1)
                         print('wait, thats coming from the d...'); print(''); time.sleep(2)
                         turn = 'F'
-
+                
+'''
             elif turn == 'd':
 
             elif turn == 'dt':
@@ -982,7 +983,7 @@ def apocalypse():
             print('---  APOCALYPSE: WORLD GO BOOM!  ---'); print(''); time.sleep(2)
 
             elif turn == 'ae':
-
+'''
 
 
 
