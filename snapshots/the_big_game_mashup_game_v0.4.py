@@ -604,6 +604,7 @@ def tic_tac_toe():
 
 # function for text based apocalypse game
 def apocalypse():
+    # introduction
     print(''); time.sleep(1)
     print(''); time.sleep(1)
     print('it was a dark and stormy night...'); print(''); time.sleep(2)
@@ -618,6 +619,7 @@ def apocalypse():
     print('...'); print(''); time.sleep(2)
     print('...noone knew what was happening...'); print(''); time.sleep(2)
     print('...untill it was too late...'); print(''); time.sleep(2)
+
     for i in range(30):
         print('...'); time.sleep(0.5); print('')
     print('WELCOME TO:'); time.sleep(0.5)
@@ -646,7 +648,58 @@ def apocalypse():
                           (     //|/l|||)|\\\\ \     )
                         (/ / //  /|//||||\\\\  \ \  \ _)
 --------------------------APOCALYPSE: WORLD GO BOOM--------------------------
-    ''')
+    '''); print(''); time.sleep(2)
+        
+    character_health = 0
+    chracter_speed = 0
+    character_hunger = 0
+    character_attack = 0
+
+    print('''
+ ------------------------------------------
+ --- CHARACTER TYPES:                   ---   
+ ---                                    ---
+ --- (health, speed, hunger, attack)    ---
+ ---                                    ---
+ --- Hunter(h): 10, 20, 15, 15          ---
+ --- Archer(a): 15, 15, 10, 20          ---
+ --- Soldier(s): 20, 10, 10, 20         ---
+ ---                                    ---
+ ------------------------------------------
+    
+    '''); print(''); time.sleep(3)
+
+    while True: 
+        character_select = input('please choose a character: '); print(''); time.sleep(0.5)
+        print('you have chosen...'); print(''); time.sleep(0.5)
+
+        if character_select == 'h':
+            print('hunter!'); print(''); time.sleep(0.5)
+            character_health = 10
+            character_speed = 20
+            character_hunger = 15
+            character_attack = 15
+            break
+        elif character_select == 'a':
+            print('archer!'); print(''); time.sleep(0.5)
+            character_health = 15
+            chracter_speed = 15
+            character_hunger = 10
+            character_attack = 20
+            break
+        elif character_select == 's':
+            print('soldier!'); print(''); time.sleep(0.5)
+            character_health = 20
+            chracter_speed = 10
+            character_hunger = 10
+            character_attack = 20
+            break
+        else:
+            print('... that\'s not a valid character. please @me in the games channel if you have an idea for one.'); print(''); time.sleep(3)
+    
+    print(f'health: {character_health}, speed: {character_speed}, hunger: {character_hunger}, attack: {character_attack}'); time.sleep(2)
+    
+    
 
 
 # function to display exit message
