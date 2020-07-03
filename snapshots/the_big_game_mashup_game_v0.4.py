@@ -951,10 +951,8 @@ def apocalypse():
             elif turn == 'dtw':
 
             elif turn == 'F':
-
-            elif turn == 'ae':
-
-    print('''
+                print(' ')
+                print('''
                                ________________
                           ____/ (  (    )   )  \___
                          /( (  (  )   _    ))  )   )\\
@@ -980,8 +978,12 @@ def apocalypse():
                          / / //  /|//||||\\\\  \ \  \ _
 -------------------------------------------------------------------------------
     '''); print(''); time.sleep(2)
-    print('---    THANK YOU FOR PLAYING:    ---'); print(''); time.sleep(2)
-    print('---  APOCALYPSE: WORLD GO BOOM!  ---'); print(''); time.sleep(2)
+            print('---    THANK YOU FOR PLAYING:    ---'); print(''); time.sleep(2)
+            print('---  APOCALYPSE: WORLD GO BOOM!  ---'); print(''); time.sleep(2)
+
+            elif turn == 'ae':
+
+
 
 
 # function to display exit message
