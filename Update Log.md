@@ -9,3 +9,8 @@
 ## V0.3
  - added tic tac toe game
  - added code comments
+
+## V0.4
+ - change branding
+ - bug fixes
+ - reduced chance of rickroll
