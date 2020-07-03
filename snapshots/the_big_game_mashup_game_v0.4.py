@@ -668,6 +668,7 @@ def apocalypse():
  ------------------------------------------
     
     '''); print(''); time.sleep(3)
+    turn = ''
 
     while True: 
         character_select = input('please choose a character: '); print(''); time.sleep(0.5)
@@ -679,6 +680,12 @@ def apocalypse():
             character_speed = 20
             character_hunger = 15
             character_attack = 15
+            max_health = 10
+            max_speed = 20
+            max_hunger = 15
+            max_attack = 15
+            turn = 'h'
+            place = 'log cabin'
             break
         elif character_select == 'a':
             print('archer!'); print(''); time.sleep(0.5)
@@ -686,6 +693,12 @@ def apocalypse():
             chracter_speed = 15
             character_hunger = 10
             character_attack = 20
+            max_health = 15
+            max_speed = 15
+            max_hunger = 10
+            max_attack = 20
+            turn = 'a'
+            place = 'tree house'
             break
         elif character_select == 's':
             print('soldier!'); print(''); time.sleep(0.5)
@@ -693,13 +706,107 @@ def apocalypse():
             chracter_speed = 10
             character_hunger = 10
             character_attack = 20
+            max_health = 20
+            max_speed = 10
+            max_hunger = 10
+            max_attack = 20
+            turn = 's'
+            place = 'barracks'
             break
         else:
             print('... that\'s not a valid character. please @me in the games channel if you have an idea for one.'); print(''); time.sleep(3)
-    
-    print(f'health: {character_health}, speed: {character_speed}, hunger: {character_hunger}, attack: {character_attack}'); time.sleep(2)
-    
-    
+
+    inventory = []
+    print(f'health: {character_health}, speed: {character_speed}, hunger: {character_hunger}, attack: {character_attack}, inventory: {inventory}'); time.sleep(2)
+   
+
+            print(f'you wake up in your {place}, well rested and fed.'); print(''); time.sleep(0.5)
+            print('you can\'t quite remember what heppend last night, or how you got home'); print(''); time.sleep(0.5)
+            print('anyways, it\'s time for a new adventure!'); print(''); time.sleep(0.5)
+
+    while health > 0:
+        print(f'''
+-------------------------------------
+--- you are at the {place}        ---
+---                               ---
+--- options:                      ---
+--- forage: f                     ---
+--- eat: e                        ---
+--- rest: r                       ---
+--- continue: c                   ---
+---                               ---
+-------------------------------------       
+        '''); print(''); time.sleep(2)
+        print(f'health: {character_health}, speed: {character_speed}, hunger: {character_hunger}, attack: {character_attack}, inventory: {inventory}'); print(''); time.sleep(2)
+        action = input('what would you like to do? '); print(''); time.sleep(0.5)
+
+        # lets player find food
+        if action == 'f':
+            forage = randint(1,5)
+            if forage == 2:
+                print('you found food!'); print(''); time.sleep(0.5)
+                inventory.append('food')
+            else:
+                print('you didnt find anything'); print(''); time.sleep(0.5)
+
+        # lets player gain hunger
+        elif action == 'e':
+            if 'food' in inventory and character_hunger < max_hunger:
+                eat = randint(1, 3)
+                character_hunger += eat
+                if character_hunger > max_hunger:
+                    character_hunger = max_hunger
+                print(f'you gained {eat} hunger'); print(''); time.sleep(0.5)
+            elif 'food' not in inventory:
+                print('you have no food'); print(''); time.sleep(0.5)
+            elif character_hunger == max_hunger:
+                print('you are not hungry'); print(''); time.sleep(0.5)
+
+        # lets player gain speed
+        elif action == 'r':
+            if character_speed < max_speed:
+                rest = randint(1, 4)
+                character_speed += rest
+                if character_speed > max_speed:
+                    character_speed = max_speed
+                print(f'you gained {rest} speed'); print(''); time.sleep(0.5)
+            elif character_speed = max_speed:
+                print('you are not tired'); print(''); time.sleep(0.5)
+
+        # lets play continue story
+        elif action == 'c':
+
+            if turn == 'h':
+                print(' you can to go the woods')
+
+            elif turn == 'a':
+
+            elif turn == 's':
+
+            elif turn == '1':
+
+            elif turn == '2':
+
+            elif turn == '4':
+
+            elif turn == '5':
+
+            elif turn == '6':
+
+            elif turn == '7':
+
+            elif turn == '8':
+
+            elif turn == '9':
+            
+            elif turn == '10':
+
+            elif turn == '11':
+
+            elif turn == 'F':
+
+            elif turn == 'AE'
+
 
 
 # function to display exit message
