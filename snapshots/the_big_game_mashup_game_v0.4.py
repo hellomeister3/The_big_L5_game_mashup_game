@@ -671,11 +671,11 @@ def apocalypse():
     turn = ''
 
     while True: 
-        character_select = input('please choose a character: '); print(''); time.sleep(0.5)
-        print('you have chosen...'); print(''); time.sleep(0.5)
+        character_select = input('please choose a character: '); print(''); time.sleep(1)
+        print('you have chosen...'); print(''); time.sleep(1)
 
         if character_select == 'h':
-            print('hunter!'); print(''); time.sleep(0.5)
+            print('hunter!'); print(''); time.sleep(1)
             character_health = 10
             character_speed = 20
             character_hunger = 15
@@ -689,9 +689,9 @@ def apocalypse():
             place = 'log cabin'
             break
         elif character_select == 'a':
-            print('archer!'); print(''); time.sleep(0.5)
+            print('archer!'); print(''); time.sleep(1)
             character_health = 15
-            chracter_speed = 15
+            character_speed = 15
             character_hunger = 10
             character_attack = 20
             max_health = 15
@@ -703,9 +703,9 @@ def apocalypse():
             place = 'tree house'
             break
         elif character_select == 's':
-            print('soldier!'); print(''); time.sleep(0.5)
+            print('soldier!'); print(''); time.sleep(1)
             character_health = 20
-            chracter_speed = 10
+            character_speed = 10
             character_hunger = 10
             character_attack = 20
             max_health = 20
@@ -722,13 +722,12 @@ def apocalypse():
     inventory = []
     inventory.append(weapon)
     print(f'health: {character_health}, speed: {character_speed}, hunger: {character_hunger}, attack: {character_attack}, inventory: {inventory}'); time.sleep(2)
-   
 
-            print(f'you wake up in your {place}, well rested and fed.'); print(''); time.sleep(0.5)
-            print('you can\'t quite remember what heppend last night, or how you got home'); print(''); time.sleep(0.5)
-            print('anyways, it\'s time for a new adventure!'); print(''); time.sleep(0.5)
+    print(f'you wake up in your {place}, well rested and fed.'); print(''); time.sleep(1)
+    print('you can\'t quite remember what heppend last night, or how you got home'); print(''); time.sleep(1)
+    print('anyways, it\'s time for a new adventure!'); print(''); time.sleep(1)
 
-    while health > 0:
+    while character_health > 0:
         print(f'''
 -------------------------------------
 --- you are at the {place}        ---
@@ -742,16 +741,16 @@ def apocalypse():
 -------------------------------------       
         '''); print(''); time.sleep(2)
         print(f'health: {character_health}, speed: {character_speed}, hunger: {character_hunger}, attack: {character_attack}, inventory: {inventory}'); print(''); time.sleep(2)
-        action = input('what would you like to do? '); print(''); time.sleep(0.5)
+        action = input('what would you like to do? '); print(''); time.sleep(1)
 
         # lets player find food
         if action == 'f':
-            forage = randint(1,5)
-            if forage == 2:
-                print('you found food!'); print(''); time.sleep(0.5)
+            forage = randint(1,4)
+            if forage == 1:
+                print('you found food!'); print(''); time.sleep(1)
                 inventory.append('food')
             else:
-                print('you didnt find anything'); print(''); time.sleep(0.5)
+                print('you didnt find anything'); print(''); time.sleep(1)
 
         # lets player gain hunger
         elif action == 'e':
@@ -761,11 +760,11 @@ def apocalypse():
                 if character_hunger > max_hunger:
                     character_hunger = max_hunger
                 inventory.remove('food')
-                print(f'you gained {eat} hunger'); print(''); time.sleep(0.5)
+                print(f'you gained {eat} hunger'); print(''); time.sleep(1)
             elif 'food' not in inventory:
-                print('you have no food'); print(''); time.sleep(0.5)
+                print('you have no food'); print(''); time.sleep(1)
             elif character_hunger == max_hunger:
-                print('you are not hungry'); print(''); time.sleep(0.5)
+                print('you are not hungry'); print(''); time.sleep(1)
 
         # lets player gain speed
         elif action == 'r':
@@ -774,129 +773,129 @@ def apocalypse():
                 character_speed += rest
                 if character_speed > max_speed:
                     character_speed = max_speed
-                print(f'you gained {rest} speed'); print(''); time.sleep(0.5)
-            elif character_speed = max_speed:
-                print('you are not tired'); print(''); time.sleep(0.5)
+                print(f'you gained {rest} speed'); print(''); time.sleep(1)
+            elif character_speed == max_speed:
+                print('you are not tired'); print(''); time.sleep(1)
 
         # lets player continue story
         elif action == 'c':
 
             if turn == 'h':
-                turn = input(' you can to go the woods(w), or the city(ci)'); print(''); time.sleep(0.5)
+                turn = input(' you can to go the woods(w), or the city(ci)'); print(''); time.sleep(1)
 
             elif turn == 'a':
-                turn = input('you can go to the city(ci) or the shooting range(sr)'); print(''); time.sleep(0.5)
+                turn = input('you can go to the city(ci) or the shooting range(sr)'); print(''); time.sleep(1)
 
             elif turn == 's':
-                turn = input('you can go to the shooting range(sr) or the mess hall(mh)'); print(''); time.sleep(0.5)
+                turn = input('you can go to the shooting range(sr) or the mess hall(mh)'); print(''); time.sleep(1)
 
             elif turn == 'w':
-                print('you are hunkered down in a shrub, looking out for any animal to cross your path'); print(''); time.sleep(0.5)
-                print(f'you see movement from behind one of the trees and swing your {weapon} round to look'); print(''); time.sleep(0.5)
-                print('but...'); print(''); time.sleep(0.5)
-                print('...thats not a deer...'); print(''); time.sleep(0.5)
-                print('its a car. but, there are no cars anymore...'); print(''); time.sleep(0.5)
+                print('you are hunkered down in a shrub, looking out for any animal to cross your path'); print(''); time.sleep(1)
+                print(f'you see movement from behind one of the trees and swing your {weapon} round to look'); print(''); time.sleep(1)
+                print('but...'); print(''); time.sleep(1)
+                print('...thats not a deer...'); print(''); time.sleep(1)
+                print('its a car. but, there are no cars anymore...'); print(''); time.sleep(1)
                 hunt = randint(1, 5)
                 for i in range(hunt):
                     inventory.append('food')
-                print('a deer runs across your path'); print(''); time.sleep(0.5)
-                print(f'you shoot it, and manage to salvage {hunt} food before the wolves arrive to finish off the carcas'); print(''); time.sleep(0.5)
-                turn = input('now with some food, you can either go to the city(ci) or the abandoned village(av) '); print(''); time.sleep(0.5)
+                print('a deer runs across your path'); print(''); time.sleep(1)
+                print(f'you shoot it, and manage to salvage {hunt} food before the wolves arrive to finish off the carcas'); print(''); time.sleep(1)
+                turn = input('now with some food, you can either go to the city(ci) or the abandoned village(av) '); print(''); time.sleep(1)
 
             elif turn == 'ci':
-                print('you arrive in the city, weaving your way past the rubble and shacks'); print(''); time.sleep(0.5)
-                print('you notice more poeple around than usual, but you dismiss it'); print(''); time.sleep(0.5)
-                turn = input(' you can either go to the shooting range(sr), the abandoned village(av), the woods(w) or the radioactive plains(rp)'); print(''); time.sleep(0.5)
+                print('you arrive in the city, weaving your way past the rubble and shacks'); print(''); time.sleep(1)
+                print('you notice more poeple around than usual, but you dismiss it'); print(''); time.sleep(1)
+                turn = input(' you can either go to the shooting range(sr), the abandoned village(av), the woods(w) or the radioactive plains(rp)'); print(''); time.sleep(1)
 
             elif turn == 'sr':
-                print(f'you arrive at the shooting range {weapon} in hand'); print(''); time.sleep(0.5)
+                print(f'you arrive at the shooting range {weapon} in hand'); print(''); time.sleep(1)
                 target = randint(2,7)
-                print('you sidle up to the first platform, taking each shot in quick sucession'); print(''); time.sleep(0.5)
+                print('you sidle up to the first platform, taking each shot in quick sucession'); print(''); time.sleep(1)
                 print(f'you get {target} bullseyes!')
-                print('you notice that the targets have far more holes in than last week'); print(''); time.sleep(0.5)
-                turn = input('you can either go to the mess hall(mh), the city(ci), the radioactive plains(rp) or the halls of death(hd)'); print(''); time.sleep(0.5)
+                print('you notice that the targets have far more holes in than last week'); print(''); time.sleep(1)
+                turn = input('you can either go to the mess hall(mh), the city(ci), the radioactive plains(rp) or the halls of death(hd)'); print(''); time.sleep(1)
 
             elif turn == 'mh':
-                print('you arrive at the mess hall, and jump for joy! the line is very small!'); print(''); time.sleep(0.5)
+                print('you arrive at the mess hall, and jump for joy! the line is very small!'); print(''); time.sleep(1)
                 meal = randint(1,3)
-                print(f'you get to the counter quickly and receive {meal} food')
+                print(f'you get to the counter quickly and receive {meal} food'); print(''); time.sleep(1)
                 for i in range(meal):
                     inventory.append('food')
-                turn = input('you can either go to the shooting range(sr) or the halls of death')
+                turn = input('you can either go to the shooting range(sr) or the halls of death(hd)'); print(''); time.sleep(1)
 
             elif turn == 'av':
                 attack = randint(1,3)
-                if attack = 1:
+                if attack == 1:
                     nomads = randint(3,6)
-                    print(f'you arrive in the abandoned village, and are ambushed by {nomads} nomads!'); print(''); time.sleep(0.5)
-                    shots = randint(1, speed)
+                    print(f'you arrive in the abandoned village, and are ambushed by {nomads} nomads!'); print(''); time.sleep(1)
+                    shots = randint(1, character_speed)
                     for i in range(nomads, shots):
                         shoot = input('type . to shoot! '); print(''); time.sleep(0.3)
-                    if shots > nomads, and character_attack > 6:
-                        print('you managed to shoot them all!'); print(''); time.sleep(0.5)
+                    if shots > nomads and character_attack > 6:
+                        print('you managed to shoot them all!'); print(''); time.sleep(1)
                     else:
                         lose = randint(1, nomads)
                         character_health -= lose
-                        print(f'oh no! you lost {lose} health before defeating them!'); print(''); time.sleep(0.5)
+                        print(f'oh no! you lost {lose} health before defeating them!'); print(''); time.sleep(1)
                         if character_health == 0:
-                            print('---  GAME OVER  ---'); print(''); time.sleep(0.5)
+                            print('---  GAME OVER  ---'); print(''); time.sleep(1)
                             break
                 else:
-                    print(' you arrive in the abandoned village, and spot a group of nomads on the other side'); print(''); time.sleep(0.5)
+                    print(' you arrive in the abandoned village, and spot a group of nomads on the other side'); print(''); time.sleep(1)
                     house = randint(1,2)
                     for i in range(house):
                         inventory.append('food')
-                    print(f' you go into some of the houses and find {house} food!'); print(''); time.sleep(0.5)
-                turn = input(' you can either go to the radioactive plains(rp), the witches hut(wh) or the desert(d)'); print(''); time.sleep(0.5)
+                    print(f' you go into some of the houses and find {house} food!'); print(''); time.sleep(1)
+                turn = input(' you can either go to the radioactive plains(rp), the witches hut(wh) or the desert(d)'); print(''); time.sleep(1)
 
             elif turn == 'rp':
                 if character_health < 8:
-                    print(' you arrive on the radioacctive plains, but you re too weak to withstand the radiation!'); print(''); time.sleep(0.5)
+                    print(' you arrive on the radioacctive plains, but you re too weak to withstand the radiation!'); print(''); time.sleep(1)
                     character_health = 0
                     print('---  GAME OVER  ---')
                 mutants = randint(5,9)
-                print(f'you arrive on the radioactive plains, and are attacked by {mutants} mutants!'); print(''); time.sleep(0.5)
-                shots = randint(2, speed)
+                print(f'you arrive on the radioactive plains, and are attacked by {mutants} mutants!'); print(''); time.sleep(1)
+                shots = randint(2, character_speed)
                 for i in range(mutants, shots):
                     shoot = input('type . to shoot! '); print(''); time.sleep(0.3)
-                if shots > mutants, and character_attack > 5:
-                    print('you managed to shoot them all!'); print(''); time.sleep(0.5)
+                if shots > mutants and character_attack > 5:
+                    print('you managed to shoot them all!'); print(''); time.sleep(1)
                 else:
                     lose = randint(1, mutants)
                     character_health -= lose
-                    print(f'oh no! you lost {lose} health before defeating them!'); print(''); time.sleep(0.5)
+                    print(f'oh no! you lost {lose} health before defeating them!'); print(''); time.sleep(1)
                     if character_health == 0:
-                        print('---  GAME OVER  ---'); print(''); time.sleep(0.5)
+                        print('---  GAME OVER  ---'); print(''); time.sleep(1)
                         break
-                turn = input('you can either go to the witches hut(wh) or the castle(ca)'); print(''); time.sleep(0.5)
+                turn = input('you can either go to the witches hut(wh) or the castle(ca)'); print(''); time.sleep(1)
 
             elif turn == 'hd':
-                print(' you arrive in the halls of death and.. oh no...'); print(''); time.sleep(0.5)
-                print('there are zombies everywhere!'); print(''); time.sleep(0.5)
+                print(' you arrive in the halls of death and.. oh no...'); print(''); time.sleep(1)
+                print('there are zombies everywhere!'); print(''); time.sleep(1)
                 for i in range(1, 3):
                     print(f'---  ROUND {i} ---')
                     zombies = randint(4, 12)
-                    print(f'there are {zombies} zombies apporaching!')
-                    shots = randint(4, speed)
+                    print(f'there are {zombies} zombies apporaching!'); print(''); time.sleep(1)
+                    shots = randint(4, character_speed)
                     if (shots > zombies and character_attack > 8) or (shots > zombies*2 and character_attack > 4):
-                        print('you killed them all!')
+                        print('you killed them all!'); print(''); time.sleep(1)
                     else:
                         lose = randint(1, zombies)
-                        print(f'oh no! you lost {lose} health before defeating them')
+                        print(f'oh no! you lost {lose} health before defeating them'); print(''); time.sleep(1)
                         if character_health == 0:
                             print('---  GAME OVER  ---')
-                print('well done! you sucessfully defeated all the zombies!'); print(''); time.sleep(0.5)
-                print('a flash on the wall draws your attention...'); print(''); time.sleep(0.5)
-                print('you see some writing in what looks to be made of gold'); print(''); time.sleep(0.5)
-                print(' you can only make out a few of the characters:'); print(''); time.sleep(0.5)
+                print('well done! you sucessfully defeated all the zombies!'); print(''); time.sleep(1)
+                print('a flash on the wall draws your attention...'); print(''); time.sleep(1)
+                print('you see some writing in what looks to be made of gold'); print(''); time.sleep(1)
+                print(' you can only make out a few of the characters:'); print(''); time.sleep(1)
                 print(''' 
                 
 :1111::10100:1111::10100:1000:101::100:101:10011:101:
 
-                '''); print(''); time.sleep(0.5)
-                turn = input(' you can either go to the radioactive plains(rp) or the castle(ca)')
+                '''); print(''); time.sleep(1)
+                turn = input(' you can either go to the radioactive plains(rp) or the castle(ca)'); print(''); time.sleep(1)
 
-
+'''
 
             elif turn == 'wh':
             
@@ -908,7 +907,7 @@ def apocalypse():
 
             elif turn == 'F':
 
-            elif turn == 'ae':
+            elif turn == 'ae':'''
 
 
 
@@ -958,7 +957,7 @@ def user_interface():
         game_select = input('enter game choice: '); print(''); time.sleep(0.5)
         time.sleep(0.5); print('you have chosen...'); print(''); time.sleep(0.5)
         game = 0
-        maybe = randint(1, 5)
+        maybe = randint(1, 10)
 
         # 1 in 5 chance of being rickrolled
         if maybe == 1:
