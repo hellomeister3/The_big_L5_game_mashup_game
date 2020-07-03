@@ -684,7 +684,7 @@ def apocalypse():
             max_speed = 20
             max_hunger = 15
             max_attack = 15
-            weapon = 'rifle'
+            weapon = 'shotgun'
             turn = 'h'
             place = 'log cabin'
             break
@@ -712,7 +712,7 @@ def apocalypse():
             max_speed = 10
             max_hunger = 10
             max_attack = 20
-            weapon = 'pistol'
+            weapon = 'rilfe'
             turn = 's'
             place = 'barracks'
             break
@@ -730,7 +730,7 @@ def apocalypse():
     while character_health > 0:
         print(f'''
 -------------------------------------
---- you are at the {place}        ---
+--- you are at the {place}---
 ---                               ---
 --- options:                      ---
 --- forage: f                     ---
@@ -805,7 +805,7 @@ def apocalypse():
             elif turn == 'ci':
                 print('you arrive in the city, weaving your way past the rubble and shacks'); print(''); time.sleep(1)
                 print('you notice more poeple around than usual, but you dismiss it'); print(''); time.sleep(1)
-                turn = input(' you can either go to the shooting range(sr), the abandoned village(av), the woods(w) or the radioactive plains(rp)'); print(''); time.sleep(1)
+                turn = input('you can either go to the shooting range(sr), the abandoned village(av), the woods(w) or the radioactive plains(rp)'); print(''); time.sleep(1)
 
             elif turn == 'sr':
                 print(f'you arrive at the shooting range {weapon} in hand'); print(''); time.sleep(1)
@@ -841,16 +841,16 @@ def apocalypse():
                             print('---  GAME OVER  ---'); print(''); time.sleep(1)
                             break
                 else:
-                    print(' you arrive in the abandoned village, and spot a group of nomads on the other side'); print(''); time.sleep(1)
+                    print('you arrive in the abandoned village, and spot a group of nomads on the other side'); print(''); time.sleep(1)
                     house = randint(1,2)
                     for i in range(house):
                         inventory.append('food')
-                    print(f' you go into some of the houses and find {house} food!'); print(''); time.sleep(1)
+                    print(f'you go into some of the houses and find {house} food!'); print(''); time.sleep(1)
                 turn = input(' you can either go to the radioactive plains(rp), the witches hut(wh) or the desert(d)'); print(''); time.sleep(1)
 
             elif turn == 'rp':
                 if character_health < 8:
-                    print(' you arrive on the radioacctive plains, but you re too weak to withstand the radiation!'); print(''); time.sleep(1)
+                    print('you arrive on the radioacctive plains, but you re too weak to withstand the radiation!'); print(''); time.sleep(1)
                     character_health = 0
                     print('---  GAME OVER  ---'); print(''); time.sleep(1)
                 mutants = randint(5,9)
@@ -870,7 +870,7 @@ def apocalypse():
                 turn = input('you can either go to the witches hut(wh) or the castle(ca)'); print(''); time.sleep(1)
 
             elif turn == 'hd':
-                print(' you arrive in the halls of death and.. oh no...'); print(''); time.sleep(1)
+                print('you arrive in the halls of death and.. oh no...'); print(''); time.sleep(1)
                 print('there are zombies everywhere!'); print(''); time.sleep(1)
                 for i in range(1, 3):
                     print(f'---  ROUND {i} ---'); print(''); time.sleep(1)
@@ -887,10 +887,10 @@ def apocalypse():
                 print('well done! you sucessfully defeated all the zombies!'); print(''); time.sleep(1)
                 print('a flash on the wall draws your attention...'); print(''); time.sleep(1)
                 print('you see some writing in what looks to be made of gold'); print(''); time.sleep(1)
-                print(' you can only make out a few of the characters:'); print(''); time.sleep(1)
+                print('you can only make out a few of the characters:'); print(''); time.sleep(1)
                 print(''' 
                 
-:1111::10100:1111::10100:1000:101::100:101:10011:101:
+:00001:11001::01001:10011::10010:01100:10010:10010:
 
                 '''); print(''); time.sleep(1)
                 turn = input(' you can either go to the radioactive plains(rp) or the castle(ca)'); print(''); time.sleep(1)
@@ -898,7 +898,7 @@ def apocalypse():
 
             elif turn == 'wh':
                 witch = randint(1,4)
-                print(' you arrive at the witches hut, and see that the witch is not there'); print(''); time.sleep(1)
+                print('you arrive at the witches hut, and see that the witch is not there'); print(''); time.sleep(1)
                 ingo = input('do you go in? y/n '); print(''); time.sleep(1)
                 if ingo == 'y':
                     print('you go into the witches hut, and notice a dark red liquid in the cauldron'); print(''); time.sleep(1)
@@ -919,13 +919,13 @@ def apocalypse():
                         if character_speed < 10:
                             print('you couldn\'t get out the window fast enough! the witch caught you!'); print(''); time.sleep(1)
                             print('she puts a bag over your head and starts to drag you away...'); print(''); time.sleep(1)
-                            print(' the last thing you notice before you pass out is the sound of construction, and a sweltering heat'); print(''); time.sleep(1)
+                            print('the last thing you notice before you pass out is the sound of construction, and a sweltering heat'); print(''); time.sleep(1)
                             turn = 'dtw'
                         else:
                             print('you make it out a window before the witch comes in. phew'); print(''); time.sleep(1)
                             turn = input('you can either go to the desert temple(dt) or the castle(ca)')
                     else:
-                        print('yyou leave the witch hut and head towards the castle'); print(''); time.sleep(1)
+                        print('you leave the witch hut and head towards the castle'); print(''); time.sleep(1)
                         turn = 'ca'
                 else:
                     print('you decide to stear this one clear, and head on towards the castle'); print(''); time.sleep(1)
@@ -941,18 +941,98 @@ def apocalypse():
                     if speed < 4:
                         print('you are so slow that the guards impale you for not leaving!'); print(''); time.sleep(1)
                         print('as you lay there, injured, by the side of the moat, you notice a flash in the distance'); print(''); time.sleep(1)
-                        print('wait, thats coming from the d...'); print(''); time.sleep(2)
-                        turn = 'F'
-                
-'''
+                        print('wait! thats coming from the d...'); print(''); time.sleep(2)
+                    else: 
+                        print('you manage to get out of there without being impaled. phew'); print(''); time.sleep(1)
+                        print('you sit by the moat, studying your now invalid identity card'); print(''); time.sleep(1)
+                        print('you notice a flash in the distance, but pay no mind to it...'); print(''); time.sleep(2)
+                else:
+                    print('you enter the castle, and approach the throne room.'); print(''); time.sleep(1)
+                    print('you see a flash through one of the windows as you approach the hearing'); print(''); time.sleep(2)
+                turn = 'F'
+
             elif turn == 'd':
+                print('you strip a layer in the sweltering heat of the desert sun'); print(''); time.sleep(1)
+                print('the sun is causign heat waves to ripple across the horizon'); print(''); time.sleep(1)
+                print('you see something in the distance'); print(''); time.sleep(1)
+                print('its a pack of hyenas!'); print(''); time.sleep(1)
+                choice = input('do you hide behind a cactus(c) or run away(r)? '); print(''); time.sleep(1)
+                if choice == 'c':
+                    print('you hide behind the cactus, but the hyenas aren\'t fazed'); print(''); time.sleep(1)
+                    print('you shoot defiantly at them, but there are just too many...'); print(''); time.sleep(1)
+                    print('noone hears your screams as you are quickly devoured'); print(''); time.sleep(1)
+                    character_health = 0
+                    print('---  GAME OVER  ---'); print(''); time.sleep(1)
+                    break
+                elif choice == 'r':
+                    if character_speed > 10:
+                        print('you manage to out run the hyenas, and find yourself in the middle of a canyon'); print(''); time.sleep(1)
+                        print('you keep going, down the only path you can'); print(''); time.sleep(1)
+                        print('the canyon opens up and you see what looks like a temple'); print(''); time.sleep(1)
+                        character_speed -= 5
+                        turn = 'dt'           
+                    else:
+                        print('you run as fast as you can, but the hyenas slowly catch up'); print(''); time.sleep(1)
+                        print('they reach you just before the entrance to a canyon'); print(''); time.sleep(1)
+                        print('you shoot defiantly at them, but there are too many...'); print(''); time.sleep(1)
+                        print('noone hears your screams as you are quickly devoured...'); print(''); time.sleep(2)
+                        print('...or so you think...'); print(''); time.sleep(2)
+                        character_health = 0
+                        print('---  GAME OVER  ---'); print(''); time.sleep(1)
+                        break
 
             elif turn == 'dt':
+                print('you stumble into the temple, hot and tired from the desert'); print(''); time.sleep(1)
+                print('you marvel at the architecture, but your awe is cut short...'); print(''); time.sleep(1)
+                print('...you realise something...'); print(''); time.sleep(1)
+                print('...'); print(''); time.sleep(1)
+                print('...this is the temple of the necromancer...'); print(''); time.sleep(2)
+                print('...the one that brought the zombies...'); print(''); time.sleep(2)
+                print('...the one that made the mutants...'); print(''); time.sleep(2)
+                print('...the one that created the virus...'); print(''); time.sleep(2)
+                print('...the one that started the fires...'); print(''); time.sleep(2)
+                print('...the one that caused the storms...'); print(''); time.sleep(2)
+                print('...then you see it...'); print(''); time.sleep(1)
+                print('BANG'); print(''); time.sleep(1)
+                print('darkness descends...'); print(''); time.sleep(1)
+                turn = 'dtw'
 
             elif turn == 'dtw':
+                for i in range(3):
+                    print('you wake up in a dark room'); print(''); time.sleep(1)
+                    print('you\'re blinded by a birght purple light'); print(''); time.sleep(1)
+                    print('the necromancer is there, with the witch'); print(''); time.sleep(1)
+                    print('they\'re performing some sort of ritual'); print(''); time.sleep(1)
+                    print('you try and sneak out the door to the side of the room'); print(''); time.sleep(1)
+                    print('you make it!'); print(''); time.sleep(1)
+                    print('hmm, you find yourself in some sort of maze...'); print(''); time.sleep(1)
+                    seq = ['r','l','r','r','l','r']
+                    player_seq = []
+                    for i in range(6):
+                        choice = input('do you go right(r) or left?(l) ')
+                        player_seq.append(choice)
+                    if player_seq == seq:
+                        break
+                    else:
+                        print('you stumble into a room'); print(''); time.sleep(1)
+                        print('its the necromancer and the witch, they see you'); print(''); time.sleep(1)
+                        print('BANG'); print(''); time.sleep(1)
+                if player_seq == seq:
+                    print('you\'ve made it out of the maze!'); print(''); time.sleep(1)
+                    print('the desert air buffets you, as you turn your face up to the sun'); print(''); time.sleep(1)
+                    print('you stumble out into the desert, tired and hungry'); print(''); time.sleep(1)
+                    turn = 'ae'
+                else:
+                    character_hunger = 1
+                    character_speed = 0
+                    print('you\'re so tired, so hungry'); print(''); time.sleep(1)
+                    print('you just need a little lie down...'); print(''); time.sleep(2)
+                    print('you see a bright flash through your eyelids...'); print(''); time.sleep(2)
+                    turn = 'F'
 
             elif turn == 'F':
-                print(' ')
+                print('the explosion rips through the land, destroying everything in its path. '); print(''); time.sleep(2)
+                print('if only you could have done something to stop it...'); print(''); time.sleep(2)
                 print('''
                                ________________
                           ____/ (  (    )   )  \___
@@ -982,7 +1062,7 @@ def apocalypse():
             print('---    THANK YOU FOR PLAYING:    ---'); print(''); time.sleep(2)
             print('---  APOCALYPSE: WORLD GO BOOM!  ---'); print(''); time.sleep(2)
 
-            elif turn == 'ae':
+ '''           elif turn == 'ae':
 '''
 
 
