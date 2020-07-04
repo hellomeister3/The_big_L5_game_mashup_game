@@ -20,3 +20,8 @@ To leave the program, just type `bye` in the game selection field.
 ## Bugs & Ideas
 
 If you find any bugs, or have any ideas, @ me in the `games` channel
+
+## License
+
+Please read the LICENSE file for terms and conditions: https://github.com/hellomeister3/The_big_game_mashup_game/blob/master/LICENSE
+
